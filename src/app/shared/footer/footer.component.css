@@ -1,0 +1,33 @@
+.footer {
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    height: 40px;
+    background-color: royalblue;
+    color: white;
+  }
+
+.version {
+    position: absolute; 
+    right: 10%;
+  }
+  
+.footer-text {
+    position: absolute; 
+    left: 40%; 
+    width: 40%;
+  }
+
+  @media only screen    
+  and (max-device-width : 640px) {
+    .version{
+      position: absolute; 
+      right: 0px;
+    }
+
+    .footer-text {
+      position: absolute; 
+      left: 0%; 
+      width: 60%;
+    }
+  }

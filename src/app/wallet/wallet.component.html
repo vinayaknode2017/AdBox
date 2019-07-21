@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <div class="row">
+       <div class="icon-container">
+          <a mat-list-item href="#"><img src="../../assets/icons/icon-wallet.svg"></a>
+       </div>
+       <br>
+       <label> &nbsp; Wallet</label>
+    </div>
+
+    <div class="row">
+      <div class="wallet-details col-md-11">
+          <div class="row">
+                <div class="col-md-3">
+                    <div class="available-balance">
+                        <div>
+                           <label style="font-size: 30px">Available Balance</label>
+                        </div>
+                        <div>
+                           <label style="font-size: 30px">23,456</label>
+                        </div>
+                        <label style="font-size: 16px">points</label>
+                        <div class="row">
+                           <button style="height: 50px; margin-top: 10%" 
+                           [routerLink]="['/recharge']" class="btn btn-primary">RECHARGE NOW</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="vr">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                   <label style="font-size: 30px">Recent Transactions</label>
+                   <div *ngIf="transactionsData">
+                     <app-custom-table [TableData]='transactionsData'></app-custom-table>
+                   </div>
+                </div>
+          </div>
+          
+          
+
+      </div>
+    </div>
+</div>

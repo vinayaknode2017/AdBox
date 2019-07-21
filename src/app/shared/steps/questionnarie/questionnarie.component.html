@@ -1,0 +1,45 @@
+     <div class="row">
+
+      <div  *ngFor="let question of questionDataService.questions; let i = index">
+          <div (click)="onQuestionSelection(i)" class="question-number-container" 
+              [ngClass]="{'selected-question': i == selectedQuestionIndex}">
+              <a href="#">
+                <span>{{ i + 1}}</span>
+              </a>
+           </div>
+      </div>
+
+      <div class="row">
+          <div class="question-number-container">
+            <a href="#">
+              <img mat-button [matMenuTriggerFor] = "menu" 
+                src="../../../../assets/icons/icon-add-item.svg" style="width: 20px;">
+            </a>
+          </div>
+          <div class="pull-right icon-container" (click)="onQuestionDeleted()">
+            <a><img src="../../../../assets/icons/icon-delete.svg" style="width: 30px"></a>
+          </div>
+      </div>
+        
+     </div>
+
+     <mat-menu #menu = "matMenu">
+        <button mat-menu-item (click)="onAddQuestion('YesNo')">
+        <img src="../../../../assets/icons/icon_toggle.svg" style="width: 20px;">
+        Yes/ No</button>
+        <button mat-menu-item (click)="onAddQuestion('MultiChoice')">
+        <img src="../../../../assets/icons/icon_radio button.svg"  style="width: 20px;">
+        Multiple Choice</button>
+        <button mat-menu-item (click)="onAddQuestion('MutliSelect')">
+        <img src="../../../../assets/icons/icon_checkbox.svg"  style="width: 20px;">
+        Multiple Select</button>
+     </mat-menu>
+
+     <div *ngIf="this.questionDataService.questions && this.questionDataService.questions.length>0">
+       <div [ngSwitch]="getSelectedQuestionTypeFromIndex()">
+          <app-yes-no *ngSwitchCase="'YesNo'" [questionNo]='getQuestionNumberFromIndex()'></app-yes-no>
+          <app-multi-select *ngSwitchCase="'MutliSelect'" [questionNo]='getQuestionNumberFromIndex()'></app-multi-select>
+          <app-multi-choice *ngSwitchCase="'MultiChoice'" [questionNo]='getQuestionNumberFromIndex()'></app-multi-choice>
+          <div *ngSwitchDefault>No matching element</div>
+       </div>     
+     </div>

@@ -1,0 +1,39 @@
+.icon-container {
+    height: 40px;
+    width: 40px;
+    background: #d7dee8;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-radius: 50%;
+    position: relative;
+    border: 1px solid gray;
+    float: left;
+}
+
+.icon-container a{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wallet-details {
+    height: 400px;
+    /* background: green; */
+    margin-top: 4%;
+}
+
+.available-balance {
+    text-align: center;
+}
+
+.vr {
+    width: 0.5px;
+    background-color: gray;
+    position: relative;
+    top: 20px;
+    height: 150px;
+    left: 20%;
+}

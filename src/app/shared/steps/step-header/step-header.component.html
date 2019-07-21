@@ -1,0 +1,8 @@
+     <div class="pull-left">
+        <label>{{ currentStep }}</label>
+     </div>
+     <div class="pull-right">
+        <label class="navigation-link" *ngIf="previousStepNum" (click)="OnSlideToPreviousDiv()">{{ previousStep }}</label> &nbsp; &nbsp;
+        <label class="navigation-link" *ngIf="nextStepNum" (click)="OnSlideToNextDiv()">{{ nextStep }}</label>
+     </div>
+     <div class="striped-border"></div>

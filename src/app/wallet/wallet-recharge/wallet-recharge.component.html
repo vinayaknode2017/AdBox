@@ -1,0 +1,94 @@
+<div class="row">
+  <div class="payment-header">
+    <h2>Payment</h2>
+    Choose payment method below
+  </div>
+  <div class="payment-section col-md-6 col-md-offset-3">
+      <mat-tab-group [dynamicHeight]='true' mat-align-tabs="center">
+          <mat-tab label="Card">
+            <div>
+              <div class="col-md-5 billing-info">
+                <label>Billing Info</label>
+                <div class="form-group" style="margin-top: 2%">
+                  <span>Full Name</span>
+                  <input type="text" class="form-control" id="fullName" placeholder="Enter full name">
+                </div>
+                <div class="form-group">
+                  <span>Address</span>
+                  <input type="text" class="form-control" id="address" placeholder="address">
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-6">
+                      <span>City</span>
+                      <input type="text" class="form-control" id="city" placeholder="city">
+                  </div>
+                  <div class="col-md-6">
+                      <span>Zip code</span>
+                      <input type="text" class="form-control" id="zipcode" placeholder="zip code">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <span>Country</span>
+                  <select class="form-control" id="country" placeholder="select">
+                    <optgroup>
+                      <option >select</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-5 col-md-offset-1 card-info">
+                <label>Card Details</label>
+                <div class="form-group" style="margin-top: 2%">
+                  <span>Card Number</span>
+                  <div class="row">
+                    <div class="col-md-9">
+                      <input class="form-control" placeholder="0000 - 0000 - 0000 - 0000">
+                    </div>
+                    <div class="col-md-3" style="padding-left: 0px;">
+                      <input class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <span>Card holder name</span>
+                  <input type="text" class="form-control" id="cardholdername" placeholder="Card Holder Name">
+                </div>
+                <div class="form-group">
+                  <span>Expiry date</span>
+                  <input type="text" class="form-control" id="expiryDate" placeholder="mm/yy">
+                </div>
+                <div class="form-group col-md-4 row">
+                  <span>cvv</span>
+                  <input type="text" class="form-control" id="expiryDate">
+                </div>
+              </div>
+            </div>
+          </mat-tab>
+          <mat-tab label="Paypal">
+            <div>
+              <div class="col-md-10 col-md-offset-1 billing-info">
+                <div class="form-group" style="margin-top: 2%">
+                  <span class="col-md-3">Mobile number</span>
+                  <div  class="col-md-9">
+                    <input type="text" class="form-control" id="fullName" placeholder="Enter 10 digit mobile number">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-tab>
+          <mat-tab label="Amazon Pay">
+              <div>
+                  <div class="col-md-10 col-md-offset-1 billing-info">
+                    <div class="form-group" style="margin-top: 2%">
+                      <span class="col-md-3">Amazon account number</span>
+                      <div  class="col-md-9">
+                        <input type="text" class="form-control" id="fullName" placeholder="Amazon account number">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </mat-tab>
+      </mat-tab-group>
+      <button  class="btn btn-primary pull-right">Next >></button>
+  </div>
+</div>

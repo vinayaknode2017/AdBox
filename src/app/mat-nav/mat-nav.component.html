@@ -1,0 +1,89 @@
+<mat-sidenav-container *ngIf="isAuthenticated" class="sidenav-container">
+
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <mat-toolbar>
+      <img src="../../assets/icons/icon-menu.svg" style="width: 30px;">
+    </mat-toolbar>
+    <mat-nav-list>
+
+      <div class="icon-container" style="margin-top: 20px;">
+        <a mat-list-item href="#"><img src="../../assets/icons/icon-home.svg"></a>
+        <br><br>
+        <div class="aligned-with-icon">
+            <span style="margin-left: 6px;">Home</span>
+        </div>
+      </div>
+      
+      <div class="icon-container">
+        <a [routerLink]="['/createsurvey']" mat-list-item href="#"><img src="../../assets/icons/icon-edit.svg"></a>
+        <br><br>
+        <div class="aligned-with-icon">
+            <span style="margin-left: 6px;">Create</span>
+        </div>
+      </div>
+
+      <div class="icon-container">
+        <a [routerLink]="['/wallet']" mat-list-item href="#"><img src="../../assets/icons/icon-wallet.svg"></a>
+        <br><br>
+        <div class="aligned-with-icon">
+            <span style="margin-left: 6px;">Wallet</span>
+        </div>
+      </div>
+
+      <div class="icon-container">
+        <a mat-list-item href="#"><img src="../../assets/icons/icon-statistic.svg"></a>
+        <br><br>
+        <div class="aligned-with-icon">
+            <span>Statistics</span>
+        </div>
+      </div>
+
+
+      <div class="icon-container">
+        <a mat-list-item href="#"><img src="../../assets/icons/icon-history.svg"></a>
+        <br><br>
+        <div class="aligned-with-icon">
+            <span style="margin-left: 4px;">History</span>
+        </div>
+      </div>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <!-- Header -->
+    <mat-toolbar>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="fill-space"></span>
+      <span class="title">AdBox</span>
+      <span class="fill-space"></span>
+      <div style="cursor: pointer;">
+        <img mat-button [matMenuTriggerFor] = "menu" 
+          src="../../assets/icons/icon-user.svg" style="width: 30px">
+      </div>
+
+      <mat-menu #menu = "matMenu">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item (click)="OnlogOut()" >Logout</button>
+      </mat-menu>
+
+    </mat-toolbar>
+    
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>

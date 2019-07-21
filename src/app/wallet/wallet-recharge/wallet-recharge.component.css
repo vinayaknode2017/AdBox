@@ -1,0 +1,50 @@
+.payment-header {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2%;
+    color: #286090;
+}
+
+.payment-header h2{
+    font-weight: bold;
+    color: #286090;
+}
+
+.payment-section {
+    height: 420px;
+    /* background: darkseagreen; */
+    margin-top: 2%;
+    overflow: hidden;
+}
+
+.billing-info {
+    height: 300px;
+    /* background: darkgray; */
+    overflow: hidden;
+    margin-top:4%; 
+}
+
+.card-info {
+    height: 300px;
+    /* background: darkgray; */
+    overflow: hidden;
+    margin-top:4%; 
+}
+
+.mat-tab {
+    height:unset!important;
+}
+
+span, label {
+    color: #286090;
+}
+
+input, select {
+    color: #286090;
+    background: #FAFAFA;
+}
+
+::placeholder {
+    color: #286090;
+    opacity: 0.6;
+}

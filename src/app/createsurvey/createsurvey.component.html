@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <div class="row">
+       <div class="icon-container">
+          <a mat-list-item href="#"><img src="../../assets/icons/icon-edit.svg"></a>
+       </div>
+       <br>
+       <label> &nbsp; Create a new survey</label>
+    </div>
+    <div class="col-md-7 stepper-div">
+       <div *ngIf="currentDivNumber==='one'" [@slideInOut] class="row">
+         <app-step-header currentStep="Step 1: Product Info" 
+                          nextStep=">>Step 2: Questionarie"
+                          nextStepNum="two"
+                          (nextStepNumber)="setNextStep($event)">
+          </app-step-header>
+         <app-product-info></app-product-info>
+       </div>
+       <div *ngIf="currentDivNumber==='two'" [@slideInOut] class="row">
+         <app-step-header currentStep="Step 2: Questionnarie" 
+                          nextStep=">>Step 3: Target Audience"
+                          nextStepNum="three"
+                          previousStepNum="one"
+                          previousStep="<<Step 1: Product Info"
+                          (nextStepNumber)="setNextStep($event)"
+                          (previousStepNumber)="setNextStep($event)">
+         </app-step-header>
+         <app-questionnarie></app-questionnarie>
+       </div>
+       <div *ngIf="currentDivNumber==='three'" [@slideInOut] class="row">
+         <app-step-header currentStep="Step 3: Target Audience" 
+                          nextStep=">>Step 4: Pay per view"
+                          nextStepNum="four"
+                          previousStepNum="two"
+                          previousStep="<<Step 2: Questionnarie"
+                          (nextStepNumber)="setNextStep($event)"
+                          (previousStepNumber)="setNextStep($event)">
+         </app-step-header>
+         <app-target-audience></app-target-audience>
+       </div> 
+       <div *ngIf="currentDivNumber==='four'" [@slideInOut] class="row">
+         <app-step-header currentStep="Step 4: Pay per view" 
+                          nextStep=">>Step 5: Review & Publish"
+                          nextStepNum="five"
+                          previousStepNum="three"
+                          previousStep="<<Step 3: Target Audience"
+                          (nextStepNumber)="setNextStep($event)"
+                          (previousStepNumber)="setNextStep($event)">
+         </app-step-header>
+         <app-pay-per-view></app-pay-per-view>
+       </div>
+       <div *ngIf="currentDivNumber==='five'" [@slideInOut] class="row">
+         <app-step-header currentStep="Step 5: Review & Submit" 
+                          previousStepNum="four"
+                          previousStep="<<Step 4: Pay per view"
+                          (previousStepNumber)="setNextStep($event)">
+         </app-step-header>
+         <div class="row">
+            <label class="pull-left">Product Info</label>
+            <app-product-info></app-product-info>
+         </div>
+         <div class="row">
+            <label class="pull-left">Questionnarie</label>
+            <app-questionnarie></app-questionnarie>
+        </div>
+        <div class="row">
+            <label class="pull-left">Target Audience</label>
+            <app-target-audience></app-target-audience>
+        </div>
+        <div class="row">
+            <label class="pull-left">Pay per view</label>
+            <app-pay-per-view></app-pay-per-view>
+        </div>
+     </div>
+    </div>
+ </div>

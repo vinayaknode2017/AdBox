@@ -1,0 +1,123 @@
+<div *ngIf="!isAuthenticated" class="container-fluid">
+
+  <div *ngIf="isLoading" class="loading-spinner">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+
+    <div class="row" [ngClass]="{'form-opaque': isLoading===true}">
+        <div class="col-md-9">
+          <div class="full-height">
+
+          <form #signInForm="ngForm">
+
+            <div class="signin-form">
+                <div class="col-md-8 col-md-offset-2">
+                    <div>
+                      
+                      <div class="welcome-div">
+                        <div class="col-md-4 col-md-offset-4">
+                          <div class="text-welcome">
+                            <h4>Welcome to AdBox</h4>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="signin-div">
+                          <div class="form-group col-md-offset-2">
+                            <label class="control-label">already have an account?</label>
+                          </div>
+                          <div class="form-group">
+                            <div align="center">
+                              <h3 class="text-primary">Sign in</h3>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                              <input class="form-control" type="email" placeholder="Email"
+                                ngModel #signinEmail="ngModel" name="signinEmail" required email>
+                          </div>
+                          <div class="form-group">
+                              <input class="form-control" type="password" placeholder="Password"
+                                ngModel #signinPassword="ngModel" name="signinPassword" required minlength="6">
+                          </div>
+                          <div class="form-group" align="center">
+                            <button [disabled]='!(signinEmail.valid && signinPassword.valid)' type="submit" 
+                                    (click)="onSignIn(signInForm)" class="btn btn-primary">Sign in</button>
+                          </div>
+                          <div *ngIf="errorMessage && function==='signin'" class="alert alert-danger">
+                            <p>{{ errorMessage }}</p>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="vr">&nbsp;
+                        <div class="vr-or">
+                          <span style="display: table-cell; vertical-align: middle;">OR</span>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="signin-div">
+                          <div class="form-group">
+                            <label class="control-label col-md-offset-1">dont have an account yet?</label>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-md-offset-3">
+                              <h3 class="text-primary">Sign Up</h3>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                              <input class="form-control" ngModel 
+                                name="signupName" required type="text" placeholder="Full Name">
+                          </div>
+                          <div class="form-group">
+                              <input class="form-control" required ngModel name="signupEmail" 
+                                    type="email" placeholder="Email">
+                          </div>
+                          <div class="form-group">
+                              <input class="form-control" required ngModel name="signupPassword" 
+                                    type="password" placeholder="Password">
+                          </div>
+                          <div class="form-group">
+                              <input class="form-control" required ngModel name="signupConfirmPassword" 
+                                     type="password" placeholder="Confirm Password">
+                          </div>
+                          <div class="form-group" align="center">
+                            <button type="submit" (click)="onSignUp(signInForm)" 
+                                    class="btn btn-primary">Sign Up</button>
+                          </div>
+                          <div *ngIf="errorMessage && function==='signup'" class="alert alert-danger">
+                            <p>{{ errorMessage }}</p>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+            </div>
+          </form>
+          
+          </div>
+        </div>
+            
+      <div class="col-md-3">
+          <div class="full-height right-section">
+
+            <div class="right-section-content">
+              <div class="form-group"><a href="#">How it works?</a></div>
+              <div class="form-group"><a href="#">Contact Us</a></div>
+              <div class="form-group"><a href="#">Who we are?</a></div>
+              <div class="form-group"><a href="#">Contributions</a></div>
+            </div>
+
+          </div>
+      </div>
+
+    </div>
+
+    <app-footer></app-footer>
+
+</div>
+
+

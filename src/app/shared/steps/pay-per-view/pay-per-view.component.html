@@ -1,0 +1,40 @@
+         <div class="col-md-6 col-md-offset-1">
+            <mat-form-field class="input-filed-full-width">
+               <input type="text" matInput placeholder="Pay per view">
+            </mat-form-field>
+            <mat-form-field style="padding-top: 10%">
+               <input type="number" min="1" matInput placeholder="Budget" 
+                  class="quantity">
+            </mat-form-field>
+            &nbsp; &nbsp; &nbsp;
+            <mat-form-field>
+               <input type="number" min="1" matInput placeholder="Estimation" 
+                  class="quantity">
+            </mat-form-field>
+            <mat-form-field style="padding-top: 10%">
+               <input [matDatepicker]="myStartDatepicker" matInput placeholder="Start date">
+               <mat-datepicker-toggle [for]="myStartDatepicker"></mat-datepicker-toggle>
+               <mat-datepicker #myStartDatepicker></mat-datepicker>
+            </mat-form-field>
+            &nbsp; &nbsp; &nbsp;
+            <mat-form-field style="padding-top: 10%">
+               <input [matDatepicker]="myEndDatepicker" matInput placeholder="End date">
+               <mat-datepicker-toggle [for]="myEndDatepicker"></mat-datepicker-toggle>
+               <mat-datepicker #myEndDatepicker></mat-datepicker>
+            </mat-form-field>
+         </div>
+         <div class="col-md-3 col-md-offset-2 audience-count">
+            <div class="row text-center">
+               <div>
+                  <label style="font-size: 20px">Wallet Balance</label>
+               </div>
+               <div>
+                  <label style="font-size: 16px">23,456</label>
+               </div>
+               <label style="font-size: 16px">points</label>
+               <div class="row">
+                  <button style="height: 50px; margin-top: 10%" 
+                          [routerLink]="['/recharge']" class="btn btn-primary">RECHARGE NOW</button>
+               </div>
+            </div>
+         </div>

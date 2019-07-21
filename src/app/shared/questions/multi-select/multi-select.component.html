@@ -1,0 +1,19 @@
+
+<div *ngIf="question">
+    <mat-form-field class="example-full-width">
+        <textarea [(ngModel)]="question.Question" name="question.Question" 
+                  matInput placeholder="Question"></textarea>
+    </mat-form-field>
+</div>
+
+<div *ngIf="question && question.Choices">
+    <div *ngFor="let choice of question.Choices; let i = index; trackBy: trackChoice">
+        <mat-form-field class="example-full-width">
+            <input [(ngModel)]="question.Choices[i]" name="{{'choice' + i}}"
+                   matInput placeholder="Option {{i + 1}}">
+        </mat-form-field>
+    </div>
+</div>
+
+<button mat-flat-button color="primary" class="mat-flat-button-custom pull-right"
+    (click)="onAddOptions()" [disabled]="!question || !question.Question">Add Option</button>

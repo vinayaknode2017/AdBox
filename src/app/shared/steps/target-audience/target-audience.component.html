@@ -1,0 +1,31 @@
+     <div class="col-md-6 col-md-offset-1">
+        <mat-form-field class="input-filed-full-width">
+           <mat-select placeholder="Select Gender">
+              <mat-option value="option">Male</mat-option>
+              <mat-option value="option">Female</mat-option>
+              <mat-option value="option">Transgender</mat-option>
+           </mat-select>
+        </mat-form-field>
+        <mat-form-field style="padding-top: 10%">
+           <input type="number" min="1" matInput placeholder="Min age" 
+              class="quantity">
+        </mat-form-field>
+        &nbsp; &nbsp; &nbsp;
+        <mat-form-field>
+           <input type="number" min="1" matInput placeholder="Max age" 
+              class="quantity">
+        </mat-form-field>
+        <mat-form-field class="input-filed-full-width-with-button">
+           <input type="text" matInput placeholder="Location">
+        </mat-form-field>
+        <a href="#" class="pull-right" style="margin-top: 10%">
+        <img src="../../assets/icons/icon-location.svg" style="width: 30px">
+        </a>
+     </div>
+     <div class="col-md-3 col-md-offset-2 audience-count">
+        <div class="row text-center">
+           <label>Audience count</label>
+           <app-my-chart [height]='100' [width]='100'></app-my-chart>
+           <span style="font-weight: bold">add might reach 238 users</span>
+        </div>
+     </div>

@@ -1,0 +1,56 @@
+.icon-container {
+    height: 40px;
+    width: 40px;
+    background: #d7dee8;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-radius: 50%;
+    position: relative;
+    border: 1px solid gray;
+    float: left;
+}
+
+.icon-container a{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.stepper-div {
+    left: 3%;
+}
+
+.striped-border {
+    border: 1px solid gray;
+    width: 100%;
+    margin: auto;
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+  
+.input-filed-full-width {
+    width: 100%;
+    padding-top: 10%;
+}
+
+.input-filed-full-width-with-button {
+    width: 80%;
+    padding-top: 10%;
+}
+
+.mat-flat-button-custom {
+    margin-top: 11%;
+}
+
+.quantity::-webkit-inner-spin-button, 
+.quantity::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.audience-count {
+    margin-top: 6%;
+}
